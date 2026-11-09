@@ -35,7 +35,7 @@ public class Pedido {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "numero_erp", nullable = false)
+    @Column(name = "numero_erp", nullable = false, unique = true)
     private Integer numeroErp;
 
     @Setter
@@ -43,7 +43,7 @@ public class Pedido {
     private String cliente;
 
     @Setter
-    @Column(name = "cnpj", nullable = false, length = 18)
+    @Column(name = "cnpj", length = 18)
     private String cnpj;
 
     @Setter
