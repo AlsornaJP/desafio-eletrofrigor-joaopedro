@@ -79,6 +79,12 @@ public class Pedido {
         itens.add(item);
     }
 
+    /** Troca todos os itens; os antigos são removidos do banco (orphanRemoval). */
+    public void substituirItens(List<ItemPedido> novosItens) {
+        itens.clear();
+        novosItens.forEach(this::adicionarItem);
+    }
+
     public List<ItemPedido> getItens() {
         return Collections.unmodifiableList(itens);
     }
